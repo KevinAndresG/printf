@@ -52,35 +52,42 @@ int _print_mod(va_list args)
 * @args: to get tthe string.
 * Return: an integer
 */
+void print(long n)
+{
+    if (n < 0)
+    {
+        _putchar('-');
+        n = -n;
+    }
+    if (n / 10)
+        print(n / 10);
+    _putchar(n % 10 + '0');
+}
+
 int _print_numbers(va_list args)
 {
-	int a = va_arg(args, int);
-	int cont = 0;
-	int b = 0;
-	int div = 1;
+    int a = va_arg(args, int);
+    int count = 0, sum = 0;
+    if (a < 0)
+    {
+        count += 1;
+    }
 
-	if (a < 0)
-	{
-		_putchar('-');
-		a = -a;
-		cont++;
-	}
-	b = a;
-
-	while ((b / 10) != 0)
-	{
-		b = b / 10;
-		div = div * 10;
-	}
-	b = a;
-	while (div >= 1)
-	{
-		_putchar((b / div) + '0');
-		b = b % div;
-		div = div / 10;
-	}
-	cont++;
-	return (cont);
+    sum = a / 10;
+    while (count)
+    {
+        if (sum != 0)
+        {
+            sum = sum / 10;
+        }
+        else
+        {
+        break;
+        }
+        count++;
+    }
+    print(a);
+    return (count);
 }
 /**
  * _print_unknown - print unknowns characters.

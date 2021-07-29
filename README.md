@@ -42,6 +42,14 @@ DESCRIBING THE PROTOTYPE: **int _printf(const char *format, ...);**
 **_PRINTF**(PRODUCE THE OUTPUT OF THE CODE)  
 **FORMAT**(THE STRING OF CHARACTERS PASED BY THE USER)  
 
+# EXAMPLES #
+
+char *name = "HOLBERTON";  
+
+_printf("MY NAME IS: %s\n", name);  
+
+OUTPUT: MY NAME IS HOLBERTON  
+
 ## BUILDED WITH 🛠️ ##
 
 VISUAL STUDIO CODE🔵IN C LANGUAGE ⚡

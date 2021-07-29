@@ -7,6 +7,7 @@
  */
 int (*printf_get_function(const char *format))(va_list)
 {
+	/** our array that save the functions and charcters */
 	print_t ls[] = {
 		{"c", _print_c},
 		{"s", _print_s},
@@ -15,13 +16,14 @@ int (*printf_get_function(const char *format))(va_list)
 		{"%", _print_mod},
 		{NULL, _print_unknown},
 	};
+
 	int a = 0;
 
+	/** walk the array to select the character after the % and go to the respect function */
 	while (ls[a].ptr != NULL)
 	{
 
 		if (*format == *(ls[a].ptr))
-
 			break;
 		a++;
 	}
@@ -36,6 +38,6 @@ int (*printf_get_function(const char *format))(va_list)
 */
 int _print_unknown(va_list args)
 {
-(void)args;
-return (-1);
+	(void)args;
+	return (-1);
 }

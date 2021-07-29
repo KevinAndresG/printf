@@ -21,10 +21,15 @@ DESCRIPTION
 
         %%   print a single %.
 
-BUGS
-    no BUGS
+EXAMPLES:
 
-AUTHOR
+char *name = "HOLBERTON";
+
+_printf("MY NAME IS: %s\n", name);
+
+OUTPUT: MY NAME IS HOLBERTON
+
+AUTHORS
 
     Kevin García
     Kenia López

@@ -24,12 +24,12 @@ char *str = va_arg(args, char *);
 
 if (str == NULL)
 {
-	return (0);
+return (0);
 }
 
 while (str[i])
 {
-	i++;
+i++;
 }
 write(1, str, i);
 return (i);
@@ -47,50 +47,39 @@ p = '%';
 _putchar(p);
 return (1);
 }
-/**
-* print - function to print numbers.
-* @n: to get tthe string.
-* Return: void.
-*/
-void print(long n)
-{
-if (n < 0)
-{
-	_putchar('-');
-	n = -n;
-}
-if (n / 10)
-	print(n / 10);
-_putchar(n % 10 + '0');
-}
 
 /**
-* _print_numbers- function to print numbers.
+* _print_numbers - function to print numbers.
 * @args: to get tthe string.
-* Return: a integer.
+* Return: a integer
 */
 int _print_numbers(va_list args)
 {
 int a = va_arg(args, int);
-int count = 0, sum = 0;
+int cont = 0;
+int b = 0;
+int div = 1;
+
 if (a < 0)
 {
-	count += 1;
+_putchar('-');
+a = -a;
+cont++;
 }
+b = a;
 
-sum = a / 10;
-while (count)
+while ((b / 10) != 0)
 {
-	if (sum != 0)
-	{
-		sum = sum / 10;
-	}
-	else
-	{
-	break;
-	}
-	count++;
+b = b / 10;
+div = div * 10;
 }
-print(a);
-return (count);
+b = a;
+while (div >= 1)
+{
+_putchar((a / div) +'0');
+a = a % div;
+div = div / 10;
+}
+cont++;
+return (cont);
 }

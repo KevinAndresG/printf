@@ -1,0 +1,34 @@
+_PRINTF
+
+NAME
+    _printf - print data an format.
+
+SYNOPSIS
+    _printf(const char *format, arguments)
+
+DESCRIPTION
+    print the contents of a variable and arguments according to their format.
+
+    FORMAT controls the output:
+
+        %c   print only one character.
+
+        %s   print a string.
+
+        %d   print a integer.
+
+        %i   print a integer.
+
+        %%   print a single %.
+
+BUGS
+    no BUGS
+
+AUTHOR
+
+    Kevin García
+    Kenia López
+
+
+
+

@@ -79,7 +79,7 @@ while (div >= 1)
 _putchar((a / div) +'0');
 a = a % div;
 div = div / 10;
-}
 cont++;
+}
 return (cont);
 }

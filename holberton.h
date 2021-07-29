@@ -24,6 +24,7 @@ int _print_c(va_list args);
 int _print_s(va_list args);
 int _print_mod(va_list args);
 int _print_numbers(va_list args);
+int _print_unknown(va_list args);
 int (*printf_get_function(const char *format))(va_list);
 
 #endif /* HOLBERTON_H */

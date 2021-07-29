@@ -25,9 +25,17 @@ int (*printf_get_function(const char *format))(va_list)
 			break;
 		a++;
 	}
-	/*if (ls[a].ptr == NULL)*/
-	/*{*/
-	/*return(0);*/
-	/*}*/
+
 	return (ls[a].pk);
+}
+
+/**
+* _print_unknown - print unknowns characters.
+* @args: a list
+* Return: an int
+*/
+int _print_unknown(va_list args)
+{
+(void)args;
+return (-1);
 }

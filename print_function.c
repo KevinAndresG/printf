@@ -59,27 +59,39 @@ int _print_numbers(va_list args)
 	int cont = 0;
 	int b = 0;
 	int div = 1;
+	int pr;
 
-	if (a < 0)
+	pr = a % 10;
+	a = a / 10;
+
+	if (pr < 0)
 	{
-		_putchar('-');
 		a = -a;
+		pr = -pr;
+		_putchar('-');
 		cont++;
 	}
 	b = a;
 
+	if (b > 0)
+	{
 	while ((b / 10) != 0)
 	{
 		b = b / 10;
 		div = div * 10;
 	}
 	b = a;
+
 	while (div >= 1)
 	{
-		_putchar((a / div) + '0');
-		a = a % div;
+		_putchar((b / div) + '0');
+		b = b % div;
 		div = div / 10;
 		cont++;
 	}
+	}
+	_putchar(pr + '0');
+	cont++;
 	return (cont);
 }
+
